@@ -7,5 +7,6 @@ export default function buildDevServer(
   return {
     open: true,
     port: buildOptions.port,
+    historyApiFallback: true,
   };
 }
