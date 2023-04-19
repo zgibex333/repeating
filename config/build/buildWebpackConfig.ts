@@ -17,7 +17,7 @@ export default function buildWebpackConfig(buildOptions: BuildOptions) {
     module: {
       rules: buildLoaders(buildOptions),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(buildOptions),
     devtool: buildOptions.isDev ? "inline-source-map" : undefined,
     devServer: buildOptions.isDev ? buildDevServer(buildOptions) : undefined,
   };
