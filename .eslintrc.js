@@ -3,14 +3,19 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:i18next/recommended',
+    'prettier',
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     indent: [2, 2],

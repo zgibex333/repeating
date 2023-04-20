@@ -1,4 +1,7 @@
 {
   "Test translation": "Тестовый перевод",
-  "Current lang": "RU"
+  "Current lang": "RU",
+  "toggle": "'Переключить'",
+  "About": "О странице",
+  "Main": "Главная"
 }

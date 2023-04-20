@@ -1,25 +1,27 @@
-import { memo } from "react";
-import { classnames } from "shared/lib/classnames/classnames";
-import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import cls from "./Navbar.module.scss";
+import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { classnames } from 'shared/lib/classnames/classnames'
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import cls from './Navbar.module.scss'
 
 interface NavbarProps {
-  className?: string;
+  className?: string
 }
 
 const Navbar = memo((props: NavbarProps) => {
-  const { className } = props;
+  const { className } = props
+  const { t } = useTranslation()
   return (
     <div className={classnames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
         <AppLink theme={AppLinkTheme.PRIMARY} to="/" className={cls.mainLink}>
-          Main
+          {t('Main')}
         </AppLink>
         <AppLink theme={AppLinkTheme.PRIMARY} to="/about">
-          About
+          {t('About')}
         </AppLink>
       </div>
     </div>
-  );
-});
-export default Navbar;
+  )
+})
+export default Navbar
