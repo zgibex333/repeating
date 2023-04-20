@@ -1,5 +1,5 @@
 import { lazy } from "react";
 
-const MarkdownPreview = lazy(() => import("./MainPage"));
+const MarkdownPreview = lazy(async () => await import("./MainPage"));
 
 export default MarkdownPreview;

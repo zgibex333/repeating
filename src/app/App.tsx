@@ -1,16 +1,15 @@
-import { classnames } from "shared/lib/classnames/classnames";
-import { useTheme } from "app/providers/ThemeProvider";
-import { AppRouter } from "app/providers/Router";
-import { Navbar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar";
-import { Suspense } from "react";
-import { useTranslation } from "react-i18next";
+import { Suspense } from 'react'
+import { classnames } from 'shared/lib/classnames/classnames'
+import { useTheme } from 'app/providers/ThemeProvider'
+import { AppRouter } from 'app/providers/Router'
+import { Navbar } from 'widgets/Navbar'
+import { Sidebar } from 'widgets/Sidebar'
 
 const App = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
-    <div className={classnames("app", {}, [theme])}>
+    <div className={classnames('app', {}, [theme])}>
       <Suspense fallback="loading">
         <Navbar />
         <div className="content-page">
@@ -19,6 +18,6 @@ const App = () => {
         </div>
       </Suspense>
     </div>
-  );
-};
-export default App;
+  )
+}
+export default App
