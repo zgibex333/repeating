@@ -3,17 +3,21 @@ import { useTheme } from "app/providers/ThemeProvider";
 import { AppRouter } from "app/providers/Router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
   const { theme } = useTheme();
 
   return (
     <div className={classnames("app", {}, [theme])}>
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="loading">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
