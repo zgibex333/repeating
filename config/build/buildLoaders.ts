@@ -11,6 +11,21 @@ export default function buildLoaders({
     exclude: /node_modules/,
   };
 
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -33,5 +48,5 @@ export default function buildLoaders({
     ],
   };
 
-  return [tsLoader, sassLoader];
+  return [tsLoader, sassLoader, svgLoader, fileLoader];
 }
