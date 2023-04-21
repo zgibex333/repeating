@@ -1,7 +1,10 @@
 {
   "Test translation": "Тестовый перевод",
   "Current lang": "RU",
-  "toggle": "'Переключить'",
+  "toggle": "Переключить",
   "About": "О странице",
-  "Main": "Главная"
+  "Main": "Главная",
+  "Page not found": "Страница не найдена",
+  "Unexpected Error": "Неожиданная ошибка",
+  "Reload Page": "Перезагрузить страницу"
 }

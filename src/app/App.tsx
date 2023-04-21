@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import { classnames } from 'shared/lib/classnames/classnames'
 import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/Router'
@@ -7,7 +7,6 @@ import { Sidebar } from 'widgets/Sidebar'
 
 const App = () => {
   const { theme } = useTheme()
-
   return (
     <div className={classnames('app', {}, [theme])}>
       <Suspense fallback="loading">
