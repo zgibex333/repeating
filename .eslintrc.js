@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -35,6 +36,7 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/naming-convention': 'off',
+    'max-len': ['error', { ignoreComments: true, ignorePattern: '^import .*' }],
   },
   globals: {
     __IS_DEV__: true,
