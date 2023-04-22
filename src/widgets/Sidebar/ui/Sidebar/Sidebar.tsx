@@ -22,12 +22,13 @@ const Sidebar = memo((props: SidebarProps) => {
       className={classnames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
+      data-testid="sidebar"
     >
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />
       </div>
-      <button type="button" onClick={onToggle}>
+      <button data-testid='sidebar-toggler' type="button" onClick={onToggle}>
         {t('toggle')}
       </button>
     </div>
