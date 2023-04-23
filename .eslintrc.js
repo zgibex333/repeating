@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'i18next'],
   rules: {
+    'linebreak-style': ['error', 'unix'],
     'react/jsx-indent': [2, 2],
     indent: [2, 2],
     'react/jsx-filename-extension': [
