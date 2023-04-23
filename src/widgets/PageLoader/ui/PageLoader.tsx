@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import Loader from 'shared/ui/Loader/Loader'
 import cls from './PageLoader.module.scss'
 
@@ -10,7 +10,7 @@ interface PageLoaderProps {
 const PageLoader = memo((props: PageLoaderProps) => {
   const { className } = props
   return (
-    <div className={classnames(cls.PageLoader, {}, [className])}>
+    <div className={classNames(cls.PageLoader, {}, [className])}>
       <Loader />
     </div>
   )

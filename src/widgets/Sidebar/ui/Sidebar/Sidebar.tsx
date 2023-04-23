@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { LangSwitcher } from 'widgets/LangSwitcher'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
@@ -19,7 +19,7 @@ const Sidebar = memo((props: SidebarProps) => {
 
   return (
     <div
-      className={classnames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
       data-testid="sidebar"

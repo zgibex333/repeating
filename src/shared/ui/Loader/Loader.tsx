@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Loader.module.scss'
 
 interface LoaderProps {
@@ -9,7 +9,7 @@ interface LoaderProps {
 const Loader = memo((props: LoaderProps) => {
   const { className } = props
   return (
-    <div className={classnames(cls.ldsfacebook, {}, [className])}>
+    <div className={classNames(cls.ldsfacebook, {}, [className])}>
       <div></div>
       <div></div>
       <div></div>

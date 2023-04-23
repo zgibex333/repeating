@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import Button from 'shared/ui/Button/Button'
 import cls from './PageError.module.scss'
 
@@ -17,7 +17,7 @@ const PageError = memo((props: PageErrorProps) => {
   }
 
   return (
-    <div className={classnames(cls.PageError, {}, [className])}>
+    <div className={classNames(cls.PageError, {}, [className])}>
       <p>{t('Unexpected Error')}</p>
       <Button onClick={reloadPage}>{t('Reload Page')}</Button>
     </div>

@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type FC, memo } from 'react'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
 export enum ThemeButton {
@@ -21,7 +21,7 @@ const Button: FC<ButtonProps> = memo((props) => {
   } = props
   return (
     <button
-      className={classnames(cls.Button, {}, [className, cls[theme]])}
+      className={classNames(cls.Button, {}, [className, cls[theme]])}
       {...otherProps}
     >
       {children}
