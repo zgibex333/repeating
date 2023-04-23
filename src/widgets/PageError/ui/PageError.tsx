@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import Button from 'shared/ui/Button/Button'
 import cls from './PageError.module.scss'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classnames } from 'shared/lib/CLASSNAMES/CLASSNAMES'
 
 interface PageErrorProps {
   className?: string

@@ -1,10 +1,10 @@
 type Mods = Record<string, boolean | string>
 
-export function classnames (
+export const classnames =  (
   cls: string,
   mods: Mods = {},
   additional: string[] = []
-): string {
+): string => {
   return [
     cls,
     ...additional.filter(Boolean),

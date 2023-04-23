@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classnames } from 'shared/lib/CLASSNAMES/CLASSNAMES'
 import cls from './Loader.module.scss'
 
 interface LoaderProps {

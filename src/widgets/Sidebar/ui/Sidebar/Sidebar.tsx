@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { LangSwitcher } from 'widgets/LangSwitcher'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
-import { classnames } from 'shared/lib/classnames/classnames'
+import { classnames } from 'shared/lib/CLASSNAMES/CLASSNAMES'
 
 interface SidebarProps {
   className?: string
