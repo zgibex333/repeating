@@ -1,0 +1,50 @@
+name: linting, testing, building
+run-name: ${{ github.actor }} is testing hit pet-project 🚀
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: ACTIONS_ALLOW_UNSECURE_COMMANDS
+        run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install node modules
+        run: npm install
+      
+      
+      - name: build Storybook
+        run: npm run build-storybook
+
+
+      - name: build project
+        run: npm run build:prod
+
+      - name: Lost Pixel
+        id: lp
+        uses: lost-pixel/lost-pixel@v3.3.0
+        env:
+          LOST_PIXEL_MODE: update
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          commit-message: update lost-pixel baselines
+          delete-branch: true
+          branch: 'lost-pixel-update/${{ github.ref_name }}'
+          title: 'Lost Pixel update - ${{ github.ref_name }}'
+          body: Automated baseline update PR created by Lost Pixel
