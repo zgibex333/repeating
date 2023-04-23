@@ -1,18 +1,18 @@
-import { classNames } from 'shared/lib/classnames/classnames'
+import  createClassName from './construct'
 
-describe('classnames', () => {
+describe('createClassName', () => {
   test('should return correct classname string', () => {
-    const className = classNames('Main', { mod: true, unmod: false }, [
+    const className = createClassName('Main', { mod: true, unmod: false }, [
       'qwerty',
     ])
     expect(className).toBe('Main qwerty mod')
   })
   test('should return correct classname with single param', () => {
-    const className = classNames('Main')
+    const className = createClassName('Main')
     expect(className).toBe('Main')
   })
   test('should return correct classname with undefined', () => {
-    const className = classNames('Main', {}, [undefined])
+    const className = createClassName('Main', {}, [undefined])
     expect(className).toBe('Main')
   })
 })

@@ -3,12 +3,12 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/Router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
-import { classNames } from 'shared/lib/classnames/classnames'
+import createClassName from 'shared/lib/constructClassname/construct'
 
 const App = () => {
   const { theme } = useTheme()
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={createClassName('app', {}, [theme])}>
       <Suspense fallback="loading">
         <Navbar />
         <div className="content-page">

@@ -8,7 +8,7 @@ import { type BuildOptions } from './types/config'
 export function buildPlugins(
   buildOptions: BuildOptions
 ): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({
       template: path.resolve(buildOptions.paths.html),
     }),
@@ -21,8 +21,15 @@ export function buildPlugins(
       __IS_DEV__: JSON.stringify(buildOptions.isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
   ]
+
+  if (buildOptions.isDev) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      })
+    )
+  }
+
+  return plugins
 }
