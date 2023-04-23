@@ -3,7 +3,7 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/Router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classnames/classnames'
 
 const App = () => {
   const { theme } = useTheme()

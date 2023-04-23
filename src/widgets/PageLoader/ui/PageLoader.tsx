@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classnames/classnames'
 import Loader from 'shared/ui/Loader/Loader'
 import cls from './PageLoader.module.scss'
 
