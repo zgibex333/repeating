@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classnames } from 'shared/lib/classnames/classnames'
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import cls from './Navbar.module.scss'
+import { classnames } from 'shared/lib/classnames/classnames'
 
 interface NavbarProps {
   className?: string
