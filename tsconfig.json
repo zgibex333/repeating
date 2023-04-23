@@ -11,10 +11,7 @@
     "esModuleInterop": true,
     // приходим от записи import * as ... from ... к => import ... from ...
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "*": ["./src/*"]
-    }
+    "baseUrl": "src",
   },
   "ts-node": {
     "compilerOptions": {
